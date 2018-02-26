@@ -49,7 +49,6 @@ module.exports = function(app, db) {
     });
 
     app.get('/notes', (req, res) => {
-        console.log(req)
         db.collection('notes').find({}).toArray((err, result) => {
             if (err) { 
                 res.send({ 'error': 'An error has occurred' }); 
