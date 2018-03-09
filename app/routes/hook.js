@@ -40,7 +40,7 @@ module.exports = function(app, db) {
     app.post('/hook', (req, res) => {
     // const note = { text: req.body.body, title: req.body.title };
        console.log("Receive POST from GitHub!")
-       console.log(JSON.parse(req.payload))
+       console.log(req.payload)
     });
 
     // app.get('/notes', (req, res) => {
