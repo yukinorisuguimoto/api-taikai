@@ -17,9 +17,17 @@ db.once('open', function() {
   // we're connected!
 
   require('./app/routes')(app, db);
-
-  console.log(models.area(2));
-  console.log(models.test);
+  let linha = {
+    musica: "Sakeyo",
+    cantor: "Augusto",
+    cidade: "Araçatuba",
+    estado: "SP",
+    ordem: 1
+  }
+  models.Linha.create(linha, function(err, small) {
+    if (err) console.log('error');
+    else console.log('saved');
+  })
 
   app.listen(port, () => {
       console.log('We are live on ' + port);
